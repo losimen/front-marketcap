@@ -1,25 +1,20 @@
-FROM node:20.18-alpine as builder
+FROM node:18 AS build
 
-MAINTAINER Bohdan Oskin <snizinkavolshebna@gmail.com>
-
-RUN apk update && apk upgrade --available
-RUN apk add --update python3
-RUN python3 -V
 WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
 
 COPY . .
 
-RUN yarn install \
-  --prefer-offline \
-  --frozen-lockfile \
-  --non-interactive \
-  --production=false
+RUN npm run build
 
-RUN yarn build
+FROM nginx:alpine
 
-FROM nginx:1.21.0-alpine
-
-COPY --from=builder /app/dist /app/public
+COPY --from=build /app/dist /usr/share/nginx/html
 COPY etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]

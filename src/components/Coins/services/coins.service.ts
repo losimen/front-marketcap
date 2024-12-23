@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useCoinsStore } from '@/store/modules/coins.ts'
+import type { ICoin } from '@/models/ICoin.interface.ts'
 
 export class CoinsService {
   private coinsStore
@@ -8,7 +9,7 @@ export class CoinsService {
     this.coinsStore = useCoinsStore()
   }
 
-  coins() {
+  coins(): ICoin[] {
     return this.coinsStore.getCoins
   }
 
@@ -21,7 +22,7 @@ export class CoinsService {
     this.coinsStore.setCoins(response.data)
   }
 
-  updateCoinsDetails(freshCoinsDetails): void {
+  updateCoinsDetails(freshCoinsDetails: ICoin[]): void {
     this.coinsStore.updateCoinsDetails(freshCoinsDetails)
   }
 }

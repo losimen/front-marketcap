@@ -2,20 +2,20 @@
   <div ref="chartContainer" style="height: 48px;"></div>
 </template>
 
-<script>
+<script lang="ts">
 import { ref, onMounted } from 'vue';
 import { createChart } from 'lightweight-charts';
 
 export default {
-  name: 'ChartComponent',
+  name: 'TableCoinChart',
   setup() {
-    const chartContainer = ref(null);
+    const chartContainer = ref('')
 
     onMounted(() => {
       const chart = createChart(chartContainer.value, {
         layout: {
           textColor: 'black',
-          background: { type: 'solid', color: 'white' },
+          background: { color: 'white' },
         },
       });
 
@@ -57,7 +57,7 @@ export default {
         bottomColor: 'rgba( 239, 83, 80, 0.28)',
         lineColor: 'rgba( 239, 83, 80, 1)',
         lineWidth: 2,
-        crossHairMarkerVisible: false,
+        // crossHairMarkerVisible: false,
         priceLineVisible: false,
         lastValueVisible: false,
       })

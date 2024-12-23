@@ -1,14 +1,15 @@
 import { defineStore } from 'pinia'
+import type { ICoin } from '@/models/ICoin.interface.ts'
 
 export const useCoinsStore = defineStore('coins', {
   state: () => ({
-    coins: []
+    coins: [] as ICoin[]
   }),
   actions: {
-    setCoins(coins): void {
+    setCoins(coins: ICoin[]): void {
       this.coins = coins
     },
-    updateCoinsDetails(freshCoinsDetails): void {
+    updateCoinsDetails(freshCoinsDetails: ICoin[]): void {
       this.coins = this.coins.map(coin => {
         const upd = freshCoinsDetails.find(c => coin.id == c.id)
 

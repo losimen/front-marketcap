@@ -39,6 +39,4 @@ import TwitterPosts from '../components/Posts/TwitterPosts.vue'
 import GridTable from '../components/GridTable.vue'
 import Header from '../components/Header.vue'
 import Container from '../components/Container.vue'
-import TableCoinChart from '@/components/Charts/TableCoinChart.vue'
-import PitctogramChart from '@/components/Charts/PitctogramChart.vue'
 </script>
