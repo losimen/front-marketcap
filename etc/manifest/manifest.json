@@ -1,0 +1,15 @@
+{
+  "app.css": "https://configurator.sunmodo.maprehend.com/projects/css/app.6d8f512d.css",
+  "app.js": "https://configurator.sunmodo.maprehend.com/projects/js/app.e93b2310.js",
+  "app.css.map": "https://configurator.sunmodo.maprehend.com/projects/css/app.6d8f512d.css.map",
+  "app.js.map": "https://configurator.sunmodo.maprehend.com/projects/js/app.e93b2310.js.map",
+  "chunk-vendors.css": "https://configurator.sunmodo.maprehend.com/projects/css/chunk-vendors.e418a737.css",
+  "chunk-vendors.js": "https://configurator.sunmodo.maprehend.com/projects/js/chunk-vendors.ed652ba6.js",
+  "chunk-vendors.css.map": "https://configurator.sunmodo.maprehend.com/projects/css/chunk-vendors.e418a737.css.map",
+  "chunk-vendors.js.map": "https://configurator.sunmodo.maprehend.com/projects/js/chunk-vendors.ed652ba6.js.map",
+  "favicon.ico": "https://configurator.sunmodo.maprehend.com/projects/favicon.ico",
+  "fonts/bootstrap.min.css": "https://configurator.sunmodo.maprehend.com/projects/fonts/glyphicons-halflings-regular.fa277232.woff",
+  "img/bootstrap.min.css": "https://configurator.sunmodo.maprehend.com/projects/img/glyphicons-halflings-regular.89889688.svg",
+  "img/projects-base.scss": "https://configurator.sunmodo.maprehend.com/projects/img/sprite.@2x.739975ae.png",
+  "index.html": "https://configurator.sunmodo.maprehend.com/projects/index.html"
+}
