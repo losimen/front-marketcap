@@ -1,3 +1,5 @@
 <template>
-  <RouterView />
+<div>
+
+</div>
 </template>
