@@ -7,7 +7,7 @@ RUN apk add --update python3
 RUN python3 -V
 WORKDIR /app
 
-COPY src .
+COPY . .
 
 RUN yarn install \
   --prefer-offline \
