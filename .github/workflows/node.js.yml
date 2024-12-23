@@ -29,7 +29,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       # Step 3: Build the Docker image
-      - name: build
+      - name: Build Docker image
         run: |
           docker build -t ghcr.io/${{ github.repository_owner }}/marketcap_front_end:latest .
 
