@@ -1,0 +1,39 @@
+name: Build and Publish Docker Image
+
+on:
+  push:
+    branches:
+      - master  # Trigger this workflow on pushes to the `master` branch
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      # Step 1: Check out the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Log in to GitHub Container Registry (GHCR)
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Step 3: Build the Docker image
+      - name: Build Docker image
+        run: |
+          docker build -t ghcr.io/${{ github.repository_owner }}/marketcap_front_end:latest .
+
+      # Step 4: Push the Docker image to GitHub Container Registry
+      - name: Push Docker image
+        run: |
+          docker push ghcr.io/${{ github.repository_owner }}/marketcap_front_end:latest
