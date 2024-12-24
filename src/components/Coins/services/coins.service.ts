@@ -18,7 +18,8 @@ export class CoinsService {
   }
 
   async getCoins(): Promise<void> {
-    const response = await axios.get(import.meta.env.VITE_BACKEND_URL + 'coins/coins')
+    const backendUrl = import.meta.env.VITE_BACKEND_URL ?? 'http://129.151.204.232:3000/'
+    const response = await axios.get(backendUrl + 'coins/coins')
     this.coinsStore.setCoins(response.data)
   }
 
